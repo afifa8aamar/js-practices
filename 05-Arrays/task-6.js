@@ -1,4 +1,4 @@
-var myReduce = function(arr,f , init) {
+var myReduceRight = function(arr,f , init) {
 
     if(!Array.isArray(arr)) 
       throw new TypeError ('Provide only an Array');
@@ -39,7 +39,7 @@ var myReduce = function(arr,f , init) {
 
 var arr = ['a', 'b', 'c'];
 var arr1 = [1,2,3,4];
-var result = myReduce(arr1,function(sum, current) {
+var result = myReduceRight(arr1,function(sum, current) {
   return sum + current;
 }, '2');
 
