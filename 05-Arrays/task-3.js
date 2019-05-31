@@ -2,7 +2,7 @@ var arr = [1, -1, 2, -2, 3];
 var arr1 = [1, 2, 3];
 var arr2 = ['hi',-2, 3];
 
-function myEvery (arr, f )
+function mySome (arr, f )
 {
   if(!Array.isArray(arr)) 
     throw new Error ('Provide only an Array');
@@ -40,6 +40,6 @@ var status = function(n){
   return n > 0;
 };
 
-console.log(myEvery(arr, status));
-console.log(myEvery(arr1, status));
-console.log(myEvery(arr2, status)); // TypeError
+console.log(mySome(arr, status));
+console.log(mySome(arr1, status));
+console.log(mySome(arr2, status)); // TypeError
