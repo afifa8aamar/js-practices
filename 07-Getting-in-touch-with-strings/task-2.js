@@ -1,10 +1,8 @@
-var cehck ; 
 const checkSpam = function (source, example)
 {
     if (typeof source !== 'string' || typeof example !== 'string')
         throw new TypeError('Please provide Strings only');
     
-    var temp;
     const count = example.length-1;
     for (var i = 0; i < source.length ; i++)
     {
