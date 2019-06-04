@@ -1,23 +1,21 @@
 const person = {
     rate : null,
-    set setRate (value) {
-        this.rate = value;
-        
-    },
-    get getRate() {
-        return this.rate;
-        
-    },
-
-    salary : null ,
-  
-    get getSalary() {
-        var day = new Date();
-        day = day.getDay();
-        return person.rate * day;
-    },
+    salary : null  
 }
 
+Object.defineProperty(person, 'rate', {
+    writable: true,
+    enumerable: true,
+    configurable: false
+});
+
+Object.defineProperty(person, 'salary', {
+    writable: false,
+    enumerable: true,
+    configurable: false ,
+    get(){ return 0; }
+});
 
 person.rate = 10;
+//console.log (Object.getOwnPropertyDescriptor(person, 'salary'));
 console.log(person.salary);
