@@ -10,7 +10,10 @@ Object.defineProperty(person, 'rate', {
 });
 
 Object.defineProperty(person, 'salary', {
-
+    set ()
+    {
+        throw new TypeError('you can\' change this');
+    },
     get()
     { 
         var today = new Date();
@@ -26,3 +29,4 @@ Object.defineProperty(person, 'salary', {
 person.rate = 10;
 console.log (Object.getOwnPropertyDescriptor(person, 'salary'));
 console.log(person.salary);
+person.salary = 'hi';
