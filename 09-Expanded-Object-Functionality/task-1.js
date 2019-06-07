@@ -14,8 +14,6 @@ Object.prototype.extend = function(o)
         }
     }
 
-
-
 }
 
 
