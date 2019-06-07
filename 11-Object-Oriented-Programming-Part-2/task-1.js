@@ -1,8 +1,9 @@
 
-Object.prototype.delay = function(time) 
+Function.prototype.delay = function(...time) 
 {
 
-    return this(setTimeout(this, time));
+  return (...arr) => {setTimeout(() => {this(...arr)}, ...time);
+  }
 
 }
 
