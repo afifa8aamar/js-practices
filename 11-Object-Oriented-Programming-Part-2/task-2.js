@@ -1,25 +1,27 @@
 function CoffeeMachine(power) {
-	var waterAmount = 0;
-	var WATER_HEAT_CAPACITY = 4200;
-	
-    function getTimeToBoil() {
-		return waterAmount * WATER_HEAT_CAPACITY * 80 / power;
-	}
-  	
-    this.run = function() {
-    	setTimeout(function() {
-			console.log('Coffee is ready!');
-    	}, getTimeToBoil());
-	};
-
+    this.power = power;
+    this.waterAmount = 0;
 }
 
+CoffeeMachine.prototype.WATER_HEAT_CAPACITY = 4200;
 
-CoffeeMachine.prototype.setWaterAmount(amount)
+CoffeeMachine.prototype.getTimeToBoil = function () {
+    return this.waterAmount * this.WATER_HEAT_CAPACITY * 80 / this.power;
+}
+
+CoffeeMachine.prototype.run = function () 
 {
-    waterAmount = amount;
+	setTimeout(function () 
+	{
+        console.log('Coffee is ready!');
+    }, this.getTimeToBoil());
+};
 
-}
+CoffeeMachine.prototype.setWaterAmount = function (amount) 
+{
+    this.waterAmount = amount;
+};
+
 
 var coffeeMachine = new CoffeeMachine(10000);
 coffeeMachine.setWaterAmount(50);
